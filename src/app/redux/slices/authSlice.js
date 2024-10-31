@@ -6,7 +6,7 @@ export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async (values, { rejectWithValue }) => {
     try {
-      const res = await fetch("http://localhost:3001/api/auth/login", {
+      const res = await fetch("http://74.225.217.14:3001/api/auth/login", {
         method: "POST",
         body: JSON.stringify(values),
         headers: { "Content-Type": "application/json" },
@@ -27,7 +27,7 @@ export const signUpUser = createAsyncThunk(
   "auth/signup",
   async (values, { rejectWithValue, dispatch }) => {
     try {
-      const res = await fetch("http://localhost:3001/api/auth/signup", {
+      const res = await fetch("http://74.225.217.14:3001/api/auth/signup", {
         method: "POST",
         body: JSON.stringify(values),
         headers: { "Content-Type": "application/json" },
