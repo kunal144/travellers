@@ -2,7 +2,7 @@
 import { Modal, ModalContent, Button, useDisclosure } from "@nextui-org/react";
 import SignUp from "./singup/signup";
 import Login from "./login/login";
-import { useState } from "react";
+import { useCallback,useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function Auth() {
