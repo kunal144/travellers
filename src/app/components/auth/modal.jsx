@@ -10,9 +10,23 @@ export default function Auth() {
 
   const [isLogin, setIsLogin] = useState(true);
 
+  const debounce = (func, delay) => {
+    let timeoutId;
+    return (...args) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => func(...args), delay);
+    };
+  };
+  const handleChange = useCallback(
+    debounce(() => {
+      onOpen();
+    }, 1),
+    [onOpen]
+  );
+
   return (
     <>
-      <Button onPress={onOpen} variant={"flat"} color="secondary">
+      <Button onPress={handleChange} variant={"flat"} color="secondary">
         Login
       </Button>
       <Modal
